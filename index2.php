@@ -1,5 +1,6 @@
 <?php 
-
+require "myfunc.php";
+$mahasiswa = query("SELECT * FROM mahasiswa");
 ?>
 
 <!DOCTYPE html>
@@ -26,18 +27,22 @@
             </tr>
         </thead>
         <tbody>
+        <?php $i = 1; ?>
+        <?php foreach( $mahasiswa as $row) :  ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td><img src="" alt=""></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $i ?></td>
+                <td><?= $row['nama'] ?></td>
+                <td><img src="" alt="" width="50px"></td>
+                <td><?= $row['nim'] ?></td>
+                <td><?= $row['email'] ?></td>
+                <td><?= $row['jurusan'] ?></td>
                 <td>
-                    <a href="">Ubah</a> |
+                    <a href="">Ubah</a> | 
                     <a href="">Hapus</a>
                 </td>
             </tr>
+        <?php $i++ ?>
+        <?php endforeach ; ?>
         </tbody>
     </table>
 
