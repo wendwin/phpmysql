@@ -1,4 +1,14 @@
 <?php 
+// koneksi ke DB
+$conn = mysqli_connect('localhost', 'root', '', 'belajarphp');
+// query ke DB
+$result = mysqli_query($conn, 'SELECT * FROM mahasiswa');
+
+// memanggil data di tabel menghasilkan array
+// mysqli_fetch_row() = mengembalikan array numerik
+// mysqli_fetch_assoc() = mengembalikan array assosiativ
+// mysqli_fetch_array() = mengmebaikan keduannya
+// mysqli_fetch_object() = mengembalikan objek, kalo objek memanggil array dengan -> 
 
 ?>
 
